@@ -1,0 +1,24 @@
+name: Tweets with target
+description: Tweets with target column added
+retweetCount_median: 1755.0
+num_rows: 15000
+num_columns: 18
+columns:
+- 'Unnamed: 0'
+- text
+- favorited
+- favoriteCount
+- replyToSN
+- created
+- truncated
+- replyToSID
+- id
+- replyToUID
+- statusSource
+- screenName
+- retweetCount
+- isRetweet
+- retweeted
+- longitude
+- latitude
+- Target

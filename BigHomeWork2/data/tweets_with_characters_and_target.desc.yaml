@@ -1,0 +1,57 @@
+name: Tweets with characters and target
+description: Tweets with characters and target columns added
+num_rows: 15000
+num_columns: 52
+columns:
+- 'Unnamed: 0'
+- text
+- favorited
+- favoriteCount
+- replyToSN
+- created
+- truncated
+- replyToSID
+- id
+- replyToUID
+- statusSource
+- screenName
+- retweetCount
+- isRetweet
+- retweeted
+- longitude
+- latitude
+- Target
+- ironman
+- captainamerica
+- hulk
+- thor
+- blackwidow
+- hawkeye
+- thanos
+- antman
+- captainmarvel
+- spiderman
+- doctorstrange
+- blackpanther
+- nebula
+- gamora
+- loki
+- scarletwitch
+- vision
+- falcon
+- wintersoldier
+- starlord
+- drax
+- groot
+- rocket
+- mantis
+- okoye
+- shuri
+- pepperpotts
+- happyhogan
+- nickfury
+- mariahill
+- wong
+- hankpym
+- janetvandyne
+- wasp
