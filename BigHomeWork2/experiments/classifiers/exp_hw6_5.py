@@ -9,10 +9,10 @@ import experiments.transformers.polynomial_features_by_character
 
 class ExpHW6Classifier5(BaseEstimator, ClassifierMixin):
 
-    def __init__(self):
+    def __init__(self, n_components=2):
         self.pipeline = Pipeline([
             ('polynomial_features_by_character', experiments.transformers.polynomial_features_by_character.PolynomialFeaturesByCharacter()),
-            ('truncated_svd', TruncatedSVD(n_components=2)),
+            ('truncated_svd', TruncatedSVD(n_components=n_components)),
             ('logistic_regression', LogisticRegression())
         ])
 

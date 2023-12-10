@@ -9,10 +9,10 @@ import experiments.transformers.np_vectorizer
 
 class ExpHW6Classifier2(BaseEstimator, ClassifierMixin):
 
-    def __init__(self):
+    def __init__(self, n_components=2):
         self.pipeline = Pipeline([
             ('np_vectorizer', experiments.transformers.np_vectorizer.NPVectorizer()),
-            ('truncated_svd', TruncatedSVD(n_components=2)),
+            ('truncated_svd', TruncatedSVD(n_components=n_components)),
             ('logistic_regression', LogisticRegression())
         ])
 
