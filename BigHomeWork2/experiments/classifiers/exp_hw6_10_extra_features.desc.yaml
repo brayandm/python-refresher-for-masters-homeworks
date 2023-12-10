@@ -1,0 +1,6 @@
+name: Experiment 10
+description: This is the tenth experiment
+pca_n_components: 15
+extra_features:
+- isRetweet
+- retweeted
