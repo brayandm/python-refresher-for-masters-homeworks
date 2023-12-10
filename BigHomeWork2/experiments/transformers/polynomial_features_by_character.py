@@ -1,6 +1,7 @@
 
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.base import BaseEstimator, TransformerMixin
+from scipy import sparse
 
 class PolynomialFeaturesByCharacter(BaseEstimator, TransformerMixin):
     def __init__(self, extra_features=[]):
@@ -23,6 +24,12 @@ class PolynomialFeaturesByCharacter(BaseEstimator, TransformerMixin):
         data = self.poly.transform(dataset[self.characters])
 
         for feature in self.extra_features:
-            data[feature] = dataset[feature]
+            if dataset[feature].dtype == 'bool':
+                extra_data = dataset[feature].astype(int)
+            else:
+                extra_data = dataset[feature]
+
+            extra_data_sparse = sparse.csr_matrix(extra_data).T 
+            data = sparse.hstack([data, extra_data_sparse], format='csr')
 
         return data
