@@ -2,13 +2,11 @@
 import spacy
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.base import BaseEstimator, TransformerMixin
-from scipy import sparse
 
 class WordVectorizer2Gram(BaseEstimator, TransformerMixin):
-    def __init__(self, extra_features=[]):
+    def __init__(self):
         self.nlp = spacy.load("en_core_web_sm")
         self.vectorizer = CountVectorizer(tokenizer=self.custom_tokenizer, ngram_range=(2, 2))
-        self.extra_features = extra_features
 
     def custom_tokenizer(self, text):
         doc = self.nlp(text)
@@ -20,15 +18,4 @@ class WordVectorizer2Gram(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, dataset):
-        data =  self.vectorizer.transform(dataset['text'])
-
-        for feature in self.extra_features:
-            if dataset[feature].dtype == 'bool':
-                extra_data = dataset[feature].astype(int)
-            else:
-                extra_data = dataset[feature]
-
-            extra_data_sparse = sparse.csr_matrix(extra_data).T 
-            data = sparse.hstack([data, extra_data_sparse], format='csr')
-
-        return data
+        return self.vectorizer.transform(dataset['text'])

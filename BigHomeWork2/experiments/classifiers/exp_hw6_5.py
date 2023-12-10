@@ -13,7 +13,7 @@ class ExpHW6Classifier5(BaseEstimator, ClassifierMixin):
 
     def __init__(self, n_components=2, extra_features=[]):
         self.pipeline = Pipeline([
-            ('polynomial_features_by_character', experiments.transformers.polynomial_features_by_character.PolynomialFeaturesByCharacter(extra_features=extra_features)),
+            ('polynomial_features_by_character', experiments.transformers.polynomial_features_by_character.PolynomialFeaturesByCharacter()),
             ('truncated_svd', TruncatedSVD(n_components=n_components)),
             ('logistic_regression', LogisticRegression())
         ])

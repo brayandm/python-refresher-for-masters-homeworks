@@ -13,7 +13,7 @@ class ExpHW6Classifier4(BaseEstimator, ClassifierMixin):
 
     def __init__(self, n_components=2, extra_features=[]):
         self.pipeline = Pipeline([
-            ('word_vectorizer_2gram_by_character', experiments.transformers.word_vectorizer_2gram_by_character.WordVectorizer2GramByCharacter(extra_features=extra_features)),
+            ('word_vectorizer_2gram_by_character', experiments.transformers.word_vectorizer_2gram_by_character.WordVectorizer2GramByCharacter()),
             ('truncated_svd', TruncatedSVD(n_components=n_components)),
             ('logistic_regression', LogisticRegression())
         ])
