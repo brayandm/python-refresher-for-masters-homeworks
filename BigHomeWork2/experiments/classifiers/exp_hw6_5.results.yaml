@@ -1,6 +1,6 @@
 name: Results for experiment 5
 description: Results for experiment 5
-accuracy: 0.63
-precision: 0.6827520305781176
-recall: 0.6150375939849624
-ami: 0.06957127300175865
+accuracy: 0.705
+precision: 0.7321428571428572
+recall: 0.6954887218045113
+ami: 0.1426289602099171

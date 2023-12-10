@@ -1,3 +1,3 @@
 name: Experiment 1
 description: This is the first experiment
-pca_n_components: 2
+pca_n_components: 10
