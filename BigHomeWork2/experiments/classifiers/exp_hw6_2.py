@@ -5,7 +5,9 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
+from importlib import reload
 import experiments.transformers.np_vectorizer
+reload(experiments.transformers.np_vectorizer)
 
 class ExpHW6Classifier2(BaseEstimator, ClassifierMixin):
 

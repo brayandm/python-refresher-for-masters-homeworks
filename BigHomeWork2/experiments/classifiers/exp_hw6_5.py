@@ -5,7 +5,9 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
+from importlib import reload
 import experiments.transformers.polynomial_features_by_character
+reload(experiments.transformers.polynomial_features_by_character)
 
 class ExpHW6Classifier5(BaseEstimator, ClassifierMixin):
 
