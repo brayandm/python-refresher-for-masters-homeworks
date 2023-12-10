@@ -9,9 +9,9 @@ import experiments.transformers.word_vectorizer_2gram
 
 class ExpHW6Classifier3(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, n_components=2):
+    def __init__(self, n_components=2, extra_features=[]):
         self.pipeline = Pipeline([
-            ('word_vectorizer_2gram', experiments.transformers.word_vectorizer_2gram.WordVectorizer2Gram()),
+            ('word_vectorizer_2gram', experiments.transformers.word_vectorizer_2gram.WordVectorizer2Gram(extra_features=extra_features)),
             ('truncated_svd', TruncatedSVD(n_components=n_components)),
             ('logistic_regression', LogisticRegression())
         ])
