@@ -1,0 +1,6 @@
+name: Results for experiment 1
+description: Results for experiment 1
+accuracy: 0.75
+precision: 0.7618164967562557
+recall: 0.7548872180451127
+ami: 0.20501504431762702
