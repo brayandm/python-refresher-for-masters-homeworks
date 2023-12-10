@@ -1,0 +1,48 @@
+import cv2
+import requests
+import numpy as np
+import pandas as pd
+import re
+
+tweets_df = pd.read_csv("tweets.csv", encoding='latin1')
+
+tweets_df
+
+def extract_urls(text):
+    pattern_url = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    urls = re.findall(pattern_url, text)
+    return urls
+
+urls = []
+
+for text in tweets_df['text']:
+    urls += extract_urls(text)
+
+print(urls)
+
+
+# # Assuming the dataset has a column 'image_url' with the URLs of the images
+# for url in tweets_df['image_url']:
+#     # Download the image
+#     response = requests.get(url)
+#     image = np.asarray(bytearray(response.content), dtype="uint8")
+#     image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+
+#     # Load a pre-trained model for human detection
+#     # For example, using a MobileNet SSD
+#     net = cv2.dnn.readNetFromCaffe('path_to_caffemodel', 'path_to_prototxt')
+
+#     # Detect humans in the image
+#     (h, w) = image.shape[:2]
+#     blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 0.007843, (300, 300), 127.5)
+#     net.setInput(blob)
+#     detections = net.forward()
+
+#     # Count the number of people
+#     people_count = 0
+#     for i in range(detections.shape[2]):
+#         confidence = detections[0, 0, i, 2]
+#         if confidence > 0.2:  # Threshold confidence
+#             people_count += 1
+
+#     print(f"Number of people in image {url}: {people_count}")
