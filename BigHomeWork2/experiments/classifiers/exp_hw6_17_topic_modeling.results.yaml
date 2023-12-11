@@ -1,6 +1,6 @@
 name: Results for experiment 17
 description: Results for experiment 17
-accuracy: 1.0
-precision: 1.0
-recall: 1.0
-ami: 1.0
+accuracy: 0.745
+precision: 0.7445978391356542
+recall: 0.7451127819548873
+ami: 0.17782168723235653

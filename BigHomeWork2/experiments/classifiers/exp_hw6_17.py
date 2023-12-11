@@ -9,6 +9,18 @@ from importlib import reload
 import experiments.transformers.word_vectorizer_1gram
 reload(experiments.transformers.word_vectorizer_1gram)
 
+import experiments.transformers.np_vectorizer
+reload(experiments.transformers.np_vectorizer)
+
+import experiments.transformers.word_vectorizer_2gram
+reload(experiments.transformers.word_vectorizer_2gram)
+
+import experiments.transformers.word_vectorizer_2gram_by_character
+reload(experiments.transformers.word_vectorizer_2gram_by_character)
+
+import experiments.transformers.polynomial_features_by_character
+reload(experiments.transformers.polynomial_features_by_character)
+
 from sklearn.preprocessing import FunctionTransformer
 
 import numpy as np
@@ -76,6 +88,5 @@ class ExpHW6Classifier17(BaseEstimator, ClassifierMixin):
                 concated_results = result
             else:
                 concated_results = np.hstack((concated_results, result))
-        self.classifier.fit(concated_results, dataset['Target'])
 
         return self.classifier.predict(concated_results)
