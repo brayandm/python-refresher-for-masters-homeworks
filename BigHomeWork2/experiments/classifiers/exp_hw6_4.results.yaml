@@ -1,6 +1,6 @@
 name: Results for experiment 4
 description: Results for experiment 4
-accuracy: 0.505
-precision: 0.5070450885668277
-recall: 0.5070175438596491
-ami: -0.0035157727375913165
+accuracy: 0.49
+precision: 0.4926612005263691
+recall: 0.49273182957393485
+ami: -0.0035119797610194178
