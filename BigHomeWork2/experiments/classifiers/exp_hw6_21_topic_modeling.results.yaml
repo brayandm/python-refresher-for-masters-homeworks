@@ -1,6 +1,6 @@
 name: Results for experiment 21
 description: Results for experiment 21
-accuracy: 0.98
-precision: 0.979681713542188
-recall: 0.9804511278195489
-ami: 0.8616125327343999
+accuracy: 0.965
+precision: 0.965
+recall: 0.9661654135338346
+ami: 0.7940446603152974
