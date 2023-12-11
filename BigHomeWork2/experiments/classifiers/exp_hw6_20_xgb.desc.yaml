@@ -1,0 +1,5 @@
+name: Experiment 20
+description: This another experiment
+pca_n_components: 10
+n_estimators: 120
+learning_rate: 0.1

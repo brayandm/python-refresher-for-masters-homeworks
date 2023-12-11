@@ -1,0 +1,8 @@
+name: Experiment 18
+description: This another experiment
+pca_n_components: 15
+extra_features:
+- isRetweet
+- retweeted
+n_estimators: 100
+learning_rate: 0.05
